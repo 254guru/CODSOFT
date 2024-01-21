@@ -1,58 +1,27 @@
-let displayValue = '';
-let operator = '';
-let firstOperand = '';
-let operationHistory = '';
+let display = document.getElementById('display');
+let isOpenBracket = false;
 
-function appendToDisplay(value) {
-  displayValue += value;
-  operationHistory += value;
-  updateDisplay();
+function appendInput(value) {
+  display.value += value;
+}
+
+function toggleBracket() {
+  if (isOpenBracket) {
+    display.value += ')';
+  } else {
+    display.value += '(';
+  }
+  isOpenBracket = !isOpenBracket;
+}
+
+function calculate() {
+  try {
+    display.value = eval(display.value.replace(/sqrt/g, 'Math.sqrt').replace(/log/g, 'Math.log'));
+  } catch (error) {
+    display.value = 'Error';
+  }
 }
 
 function clearDisplay() {
-  displayValue = '';
-  operator = '';
-  firstOperand = '';
-  operationHistory = '';
-  updateDisplay();
-}
-
-function setOperator(op) {
-  operator = op;
-  if (displayValue !== '') {
-    firstOperand = parseFloat(displayValue);
-    operationHistory += ' ' + operator + ' ';
-    displayValue = '';
-  }
-}
-
-function calculateResult() {
-  if (operator !== '' && displayValue !== '') {
-    const secondOperand = parseFloat(displayValue);
-    let result;
-    switch (operator) {
-      case '+':
-        result = firstOperand + secondOperand;
-        break;
-      case '-':
-        result = firstOperand - secondOperand;
-        break;
-      case '*':
-        result = firstOperand * secondOperand;
-        break;
-      case '/':
-        result = firstOperand / secondOperand;
-        break;
-    }
-    displayValue = result.toString();
-    operationHistory += ' ' + secondOperand + ' = ' + result;
-    operator = '';
-    firstOperand = '';
-    updateDisplay();
-  }
-}
-
-function updateDisplay() {
-  document.getElementById('display').value = displayValue;
-  document.getElementById('operation-history').textContent = operationHistory;
+  display.value = '';
 }

@@ -1,47 +1,51 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .calculator {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  #display {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 18px;
-  }
-  
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background-color: #f0f0f0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  /* Add this style for operation history */
-.operation-history {
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 14px;
-    text-align: right;
-    color: #666;
-  }  
+.calculator {
+  text-align: center;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: hsl(222, 26%, 31%);
+}
+
+#display {
+  width: 95%;
+  padding: 5px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  caret-color: red;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 80%;
+}
+
+.operator{
+  background-color: hsl(259, 100%, 65%);
+}
+
+.clear {
+  background-color: red;
+}
+
+.equals{
+  background-color: orange;
+}
