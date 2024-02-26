@@ -1,4 +1,5 @@
 # Basic calculator
+<img src="/calculator/images/Screenshot from 2024-02-26 09-10-39.png">
 
 ## Description
 This static web app calculator is a simple tool designed to perform basic arithmetic calculations. It allows users to add, subtract, multiply, and divide numbers conveniently through a user-friendly interface. The calculator functions without the need for internet connectivity, making it suitable for offline use. It's built using HTML, CSS, and JavaScript, ensuring compatibility with various web browsers.
